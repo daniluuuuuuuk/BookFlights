@@ -25,7 +25,7 @@ SECRET_KEY = '()sj9yd58_5lnfv1dtlo0&$*=t2(v64wuc*h^bx-k-uu3z)g*n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["bookflights.herokuapp.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
