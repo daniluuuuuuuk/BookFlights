@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
 {% block title %}Main{% endblock %}
 
 {% block content %}
@@ -10,7 +10,7 @@
 			<div class="facilities">
   <div class="container cf">
     <ul class="insFacilities">
-      <li class="insFacilities__item"><img src="img/blueglobe.png" title="Авиакасса" alt="Авиакасса">
+      <li class="insFacilities__item"><img src="{% static 'img/blueglobe.png' %}" title="Авиакасса" alt="Авиакасса">
         <h1 class="insFacilities__title">Все направления</h1>
 
         <p class="pumpum">Поиск авиабилетов по всем странам, 3400 вариантов направлений, 351 авиакомпаний.
@@ -19,7 +19,7 @@
       </li>
 
       <li class="insFacilities__item">
-        <img src="img/clock.png" title="Бронирование авиабилетов" alt="Бронирование авиабилетов">
+        <img src="{% static 'img/clock.png' %}" title="Бронирование авиабилетов" alt="Бронирование авиабилетов">
         <h1 class="insFacilities__title">Быстро и качественно</h1>
 
         <p class="pumpum">Удобный поиск и бронирование авиабилетов, быстрое обслуживание - наше кредо.
@@ -28,13 +28,13 @@
       </li>
 
       <li class="insFacilities__item">
-        <img src="img/dollar.png" title="Стоимость авиабилетов" alt="Стоимость авиабилетов">
+        <img src="{% static 'img/dollar.png' %}" title="Стоимость авиабилетов" alt="Стоимость авиабилетов">
         <h1 class="insFacilities__title">Низкие цены</h1>
 
         <p class="pumpum">S7, ЮТэйр, Белавиа, Аэрофлот, Austrian Airlines, Lufthansa, LOT, Туркменские Авиалинии, Etihad. Узнать стоимость авиабилетов легко - воспользуйтесь формой выше. </p>
       </li>
 
-      <li class="insFacilities__item"><img src="img/card.png" title="Купить авиабилет" alt="Купить авиабилет">
+      <li class="insFacilities__item"><img src="{% static 'img/card.png' %}" title="Купить авиабилет" alt="Купить авиабилет">
         <h1 class="insFacilities__title">Оплата картой</h1>
 
         <p class="pumpum">Возможность оплаты авиабилетов банковской картой не выходя из дома в любое время не зависимо от стоимости авиабилетов.
@@ -44,5 +44,5 @@
     </ul>
   </div>
 </div>
-<button type="button" class="btn btn-dark">Dark</button>
+<div class = 'but'><button type="button" class="btn btn-dark">Забронировать</button></div>
 {% endblock %}

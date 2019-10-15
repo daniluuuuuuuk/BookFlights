@@ -180,6 +180,12 @@ text-decoration: none;
 	text-align: center;
 }
 
-.btn btn-dark{
 
+button{
+    margin: auto;
+    display: block;
 }
+
+.btn {
+    display: block;
+   }
