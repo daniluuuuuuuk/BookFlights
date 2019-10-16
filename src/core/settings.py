@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # our apps
-    "main", ]
+    "main",
+    "booking", ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
