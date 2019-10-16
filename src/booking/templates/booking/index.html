@@ -4,5 +4,98 @@
 {% block page_name %}Бронирование билетов{% endblock %}
 
 {% block content %}
+	<div class="slider__column" style="position: relative; margin-bottom: -365px; float: right; z-index: 100; margin-right: 5%; display: table-cell; vertical-align: middle; width: 560px; top: 18px;">
+    <form class="form" sourceindex="0" accept-charset="utf-8" method="get" action="https://aviabilet.by/avia/#/results/import/">
+      <input type="hidden" name="Class" value="A">
+      <input type="hidden" name="Direct" value="1">
 
+      <header class="form__header">
+        <h1 class="form__title"><span>Найдите</span> свой авиабилет</h1>
+      </header>
+
+      <fieldset class="form__body">
+        <div class="form__row">
+          <div class="form__item">
+            <input style="display: block; width: 10px; float: left; margin-top: -1px;" type="radio" sourceindex="1" checked="checked" onclick="show_waytype();return true" value="back" id="SearchWayTypeRoundTrip" name="type">
+            <label class="bold" for="SearchWayTypeRoundTrip">Туда и обратно</label>
+          </div>
+
+          <div class="form__item">
+            <input style="display: block; width: 10px; float: left; margin-top: -1px;" type="radio" sourceindex="2" onclick="show_waytype();return true" value="oneway" id="SearchWayTypeOneWay" name="type">
+            <label for="SearchWayTypeOneWay">Только туда</label>
+          </div>
+        </div>
+
+        <div class="form__row">
+          <div class="form__item"><label class="form__label" for="SearchDeparture">Откуда:</label>
+            <input type="text" id="pointA" class="input ac_input ui-autocomplete-input" required="" autocomplete="off">
+            <input id="pointACode" name="DepartureCode1" type="hidden">
+          </div>
+
+          <div class="form__item"><label class="form__label" for="SearchDeparture">Куда:</label>
+            <input type="text" id="pointB" class="input ac_input ui-autocomplete-input" required="" autocomplete="off">
+            <input id="pointBCode" name="ArrivalCode1" type="hidden">
+          </div>
+        </div>
+
+        <div class="form__row">
+          <div class="form__item"><label class="form__label">Туда:</label>
+            <input id="SearchDepartureDate" name="Date1" type="hidden">
+            <input type="text" sourceindex="5" id="SearchDepartureDateVisual" value="Выберите дату" default="true" default_text="Выберите дату" onblur="if(this.value == '')jQuery(this).css('color','#2C3136');" onclick=" jQuery(this).css('color','#2C3136'); " style="color: rgb(44, 49, 54);" class="form__field form__field_calendar datepicker hasDatepicker">
+          </div>
+
+          <div class="form__item" id="Comebackdiv"><label class="form__label">Назад:</label>
+            <input id="SearchComebackDate" name="Date2" type="hidden">
+            <input type="text" sourceindex="8" id="SearchComebackDateVisual" value="Выберите дату" default="true" default_text="Выберите дату" onblur="if(this.value == '')jQuery(this).css('color','#2C3136');" onclick=" jQuery(this).css('color','#2C3136'); " style="color: rgb(44, 49, 54);" class="form__field form__field_calendar datepickerSecond hasDatepicker">
+          </div>
+        </div>
+
+        <div>
+          <div style="float: left; width: 90px;">
+            <label style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; font-stretch: normal; font-size: 0.916667em; line-height: normal; font-family: 'Open Sans', sans-serif;" class="label_3" for="SearchAdults">Взрослые (12+)</label>
+            <select style="width: 64px;" sourceindex="9" id="SearchAdults" name="AdultQnt">
+              <option selected="selected" value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </div>
+
+          <div style="float: left; width: 90px;" id="children">
+            <label style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; font-stretch: normal; font-size: 0.916667em; line-height: normal; font-family: 'Open Sans', sans-serif;" class="label_3" for="SearchChildren">Дети (2-11)</label>
+            <select style="width: 64px;" sourceindex="10" id="SearchChildren" name="ChildQnt">
+              <option selected="selected" value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </div>
+
+          <div style="float: left; width: 90px;" id="infants">
+            <label style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; font-stretch: normal; font-size: 0.916667em; line-height: normal; font-family: 'Open Sans', sans-serif;" class="label_3" for="SearchInfants">Младенцы (0-2)</label>
+            <select style="width: 64px;" sourceindex="11" id="SearchInfants" name="InfantQnt">
+              <option selected="selected" value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+
+            <input onclick="if(jQuery('#SearchWayTypeOneWay').attr('checked')) jQuery('#SearchComebackDate').val(''); searchFlights(); return false;" type="button" value="Поиск" style="float: right; margin-top: 10px;" class="btn btn_form">
+        </div>
+      </fieldset>
+    </form>
+    <!-- END: FORM -->
+  </div>
 {% endblock %}

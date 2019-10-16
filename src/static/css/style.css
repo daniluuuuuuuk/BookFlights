@@ -208,3 +208,6 @@ text-decoration: none;
 	text-decoration: none;
 }
 
+#.main {
+	min-height: calc(100vh - 80px);
+}
