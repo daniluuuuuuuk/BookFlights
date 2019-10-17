@@ -5,10 +5,12 @@ verify_ssl = true
 
 [dev-packages]
 black = "==19.3b0"
+ipython = "*"
 
 [packages]
 django = "*"
 dynaconf = {extras = ["yaml"],version = "*"}
+sqlite3 = "*"
 
 [requires]
 python_version = "3.7"

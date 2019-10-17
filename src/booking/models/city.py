@@ -5,3 +5,6 @@ class City(m.Model):
     name = m.TextField(unique=True)
     lat = m.FloatField(unique=True)
     lon = m.FloatField(unique=True)
+
+    class Meta:
+        verbose_name_plural = "cities"

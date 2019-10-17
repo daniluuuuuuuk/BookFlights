@@ -203,4 +203,21 @@ text-decoration: none;
 	text-decoration: none;
 }
 
+.html,
+.body {
+  height: 100%;
+}
+#wrap {
+  min-height: 100%;
+}
+.main {
+  padding-bottom: 100px;
+  /*Высота футера*/
+}
+.footer {
+  margin-top: -100px;
+  /*Минус Высота футера*/
+  height: 100px;
+  /*Высота футера*/
+}
 
