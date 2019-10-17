@@ -4,111 +4,72 @@
 {% block page_name %}Бронирование билетов{% endblock %}
 
 {% block content %}
-	<form name="record" method="POST" action="">
-
-          <table class="t_zpd">
-          <tbody>
-            <tr>
-                <td width="50%" colspan="2" style="padding: 0px;vertical-align: top;">
-
-              <table class="t_zpd">
-              <tbody>
-              <tr>
-                <th>Откуда<font color="#CC0033">*</font></th>
-                <td><select> name="textValue(tip_vag)" class="input_text"><option value="" selected="selected"></option>
-                  {% for city in cities %}
-                    <option value="*">{{city.name}}</option>
-                  {% endfor %}
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <th>Куда<font color="#CC0033">*</font></th>
-                <td><input type="text" name="textValue(nstn)" value=""></td>
-              </tr>
-              <tr>
-                <th>Номер рейса<font color="#CC0033">*</font></th>
-                <td><input type="text" name="textValue(poezd)" maxlength="3" value=""></td>
-              </tr>
-
-              <tr>
-                <th>Класс<font color="#CC0033">*</font></th>
-                <td><select name="textValue(tip_vag)" class="input_text"><option value="" selected="selected"></option>
-                    <option value="Л">Л - 2-местный</option>
-                  <option value="Лу">Лу - 2-местный с услугами</option>
-                  <option value="М">М - мягкий</option>
-                  <option value="К">К - купейный</option>
-                  <option value="Ку">Ку - купейный с услугами</option>
-                  <option value="П">П - плацкартный</option>
-                  <option value="Пу">Пу - плацкартный с услугами</option>
-                  <option value="О">О - общий</option>
-                  <option value="С">С - межобластной, сидячий</option></select>
-                  </td>
-              </tr>
-
-              <tr>
-                <th>Количество билетов<font color="#CC0033">*</font></th>
-                <td><select name="textValue(kol_mest)" id="kol_mest"><option value=""></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option></select>
-                </td>
-              </tr>
-
-              <tr>
-                <th>Дата отправления<font color="#CC0033">*</font></th>
-                <td>
-                  <table border="0" cellspacing="0" cellpadding="0">
-                      <tbody>
-                      <tr>
-                        <td width="99%">
-
-                          <input type="text" name="textValue(dat_o)" maxlength="10" value="" onclick="setDefaultValue( this, '06.10.2019' )" id="id_date_o_bt_date_o">
-                        </td>
-                        <td>
-
-                          <input type="image" id="id_date_o_bt" src="./jscalendar-1.0/img.gif" alt="..." title="Календарь для выбора даты" onmouseover="setDefaultValue( window.document.getElementById('id_date_o'), '06.10.2019' )" style="width:20; height:14px;">
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-
-                      </tbody></table>
-                  </td>
-              </tr>
-              <tr>
-                  <th width="20%">ФИО пассажира<font color="#CC0033">*</font></th>
-                  <td width="30%"><input type="text" name="textValue(f_zakaz)" value="" onblur="fill_f_pass1(this)">
-                  </td>
-              </tr>
-              <tr>
-                  <th width="20%" style="text-align: center;">Контактный городской телефон<font color="#CC0033">*</font>
-                  </th>
-                  <td width="30%"><input type="text" name="textValue(tel)" value="">
-                  </td>
-              </tr>
-            <tr>
-                  <th width="20%" style="text-align: center;">Номер паспорта<font color="#CC0033">*</font>
-                  </th>
-                  <td width="30%"><input type="text" name="textValue(tel)" value="">
-                  </td>
-              </tr>
-              <tr>
-                  <th>Ваш e-mail<font color="#CC0033">*</font></th>
-                  <td><input type="text" name="textValue(email)" value=""></td>
-                  <td colspan="2"></td>
-              </tr>
-
-
-              </tbody></table>
-              <span class="knopka">
-              <input type="button" name="send_z" value="Забронировать" class="submit"><br>
-              </span>
-
-
-
-      </form>
+	<form name="record" method="POST" action="" autocomplete="on">
+      <table>
+        <tr>
+          <th>Откуда<font color="#CC0033">*</font></th>
+          <td><select name="textValue(from)" class="input_text"><option value="" selected="selected"></option>
+              {% for city in cities %}
+              <option value="*">{{city.name}}</option>
+            {% endfor %}
+            </select>
+            </td>
+        </tr>
+        <tr>
+          <th>Куда<font color="#CC0033">*</font></th>
+          <td><input type="text" name="textValue(to)" value=""></td>
+        </tr>
+        <tr>
+          <th>Номер поезда<font color="#CC0033">*</font></th>
+          <td><input type="text" name="textValue(train)" maxlength="3" value=""></td>
+        </tr>
+        <tr>
+          <th>Тип вагона<font color="#CC0033">*</font></th>
+          <td><select name="textValue(type_vag)" class="input_text"><option value="" selected="selected"></option>
+              <option value="Л">Л - 2-местный</option>
+            <option value="Лу">Лу - 2-местный с услугами</option>
+            <option value="М">М - мягкий</option>
+            <option value="К">К - купейный</option>
+            <option value="Ку">Ку - купейный с услугами</option>
+            <option value="П">П - плацкартный</option>
+            <option value="Пу">Пу - плацкартный с услугами</option>
+            <option value="О">О - общий</option>
+            <option value="С">С - межобластной, сидячий</option></select>
+          </td>
+        </tr>
+        <tr>
+          <th>Количество билетов<font color="#CC0033">*</font></th>
+          <td><select name="textValue(kol_tickets)" id="kol_tickets"><option value=""></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option></select>
+          </td>
+        </tr>
+        <tr>
+          <th>Дата отправления<font color="#CC0033">*</font></th>
+          <td><input type="date" name="calendar">
+          </td>
+        </tr>
+        <tr>
+            <th width="20%">ФИО пассажира<font color="#CC0033">*</font></th>
+            <td width="30%"><input type="text" name="textValue(passenger)" value="" >
+            </td>
+        </tr>
+        <tr>
+            <th width="20%" style="text-align: center;">Телефон<font color="#CC0033">*</font>
+            </th>
+            <td width="30%"><input type="text" name="textValue(tel)" value="">
+            </td>
+        </tr>
+        <tr>
+            <th>E-mail<font color="#CC0033">*</font></th>
+            <td><input type="text" name="textValue(email)" value=""></td>
+            <td colspan="2"></td>
+        </tr>
+      </table>
+      <span class="knopka">
+        <input type="button" name="send_record" value="Забронировать" class="submit"><br>
+      </span>
+    </form>
 {% endblock %}
