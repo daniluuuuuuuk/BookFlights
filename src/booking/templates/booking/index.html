@@ -17,7 +17,12 @@
         </tr>
         <tr>
           <th>Куда<font color="#CC0033">*</font></th>
-          <td><input type="text" name="textValue(to)" value=""></td>
+          <td><select name="textValue(from)" class="input_text"><option value="" selected="selected"></option>
+              {% for city in cities %}
+              <option value="*">{{city.name}}</option>
+            {% endfor %}
+            </select>
+            </td>
         </tr>
         <tr>
           <th>Номер поезда<font color="#CC0033">*</font></th>
