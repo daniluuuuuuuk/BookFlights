@@ -2,6 +2,7 @@ default:
   SECRET_KEY: ""
   DEBUG: true
   ALLOWED_HOSTS: []
+  DATABASE_URL: ""
 
 heroku:
   DEBUG: false
@@ -9,3 +10,9 @@ heroku:
     - 127.0.0.1
     - localhost
     - bookflights.herokuapp.com
+
+development:
+  DEBUG: true
+  ALLOWED_HOSTS:
+    - 127.0.0.1
+    - localhost

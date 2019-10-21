@@ -8,9 +8,12 @@ black = "==19.3b0"
 ipython = "*"
 
 [packages]
+dj-database-url = "*"
 django = "*"
 dynaconf = {extras = ["yaml"],version = "*"}
-sqlite3 = "*"
+gunicorn = "*"
+whitenoise = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"
