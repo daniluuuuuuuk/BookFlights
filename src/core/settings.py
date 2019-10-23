@@ -122,7 +122,8 @@ USE_L10N = True
 USE_TZ = True
 
 
-STATIC_URL = "/static/"
 STATIC_DIR = BASE_DIR / "static"
 STATIC_DIR.mkdir(exist_ok=True)
 STATIC_ROOT = STATIC_DIR.as_posix()
+
+STATIC_URL = "/static/"
