@@ -5,23 +5,12 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('booking', '0001_initial'),
-    ]
+    dependencies = [("booking", "0001_initial")]
 
     operations = [
         migrations.AlterModelOptions(
-            name='city',
-            options={'ordering': ['name'], 'verbose_name_plural': 'cities'},
+            name="city", options={"ordering": ["name"], "verbose_name_plural": "cities"}
         ),
-        migrations.AlterField(
-            model_name='city',
-            name='lat',
-            field=models.FloatField(),
-        ),
-        migrations.AlterField(
-            model_name='city',
-            name='lon',
-            field=models.FloatField(),
-        ),
+        migrations.AlterField(model_name="city", name="lat", field=models.FloatField()),
+        migrations.AlterField(model_name="city", name="lon", field=models.FloatField()),
     ]

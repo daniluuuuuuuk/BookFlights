@@ -8,7 +8,7 @@ class City(m.Model):
 
     class Meta:
         verbose_name_plural = "cities"
-        ordering = ['name']
+        ordering = ["name"]
 
     def __repr__(self):
         return f"City #{self.pk}: '{self.name}'"
