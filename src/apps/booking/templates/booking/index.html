@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Booking{% endblock %}
+{% block page_name %}Бронирование билетов{% endblock %}
+
+
+{% block content %}
+<p>
+  <b>Бронирование билетов.</b>
+</p>
+
+<form id='booking' method="get" action="{% url 'booking' %}">
+  {{form.as_p}}
+  <button type="submit">Забронировать</button>
+</form>
+
+<div>
+
+  {% for book in object_list %}
+
+  <div style="background: #4682B4">
+    <div><span>{{book.city.dep_station} - {book.city.arr_station}</span></div>
+    <div>
+      <ul>
+        <li class="li--{{book.plane.dep_time}}">{{book.plane.dep_time}}</li>
+      </ul>
+    </div>
+  </div>
+  {% endfor %}
+
+</div>
+
+{% endblock %}

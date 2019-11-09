@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Ticket::{{object.flight_number}}{% endblock %}
+{% block page_name %}Ваш билет{% endblock %}
+
+{% block content %}
+	<p>
+		<h2>Ваш билет:</h2>
+		<li>
+			<b>
+				ФИО пассажира: {{object.passenger_info.surname}} {{object.passenger_info.name}} {{object.passenger_info.patronymic}}
+			</b>
+		</li>
+		<li>
+			<b>
+				От: {{object.plane_info.dep_station}}
+			</b>
+		</li>
+		<li>
+			<b>
+				До: {{object.plane_info.arr_station}}
+			</b>
+		</li>
+		<li>
+			<b>
+				Отправление: {{object.plane_info.dep_time}}
+			</b>
+		</li>
+		<li>
+			<b>
+				Прибытие: {{object.plane_info.arr_time}}
+			</b>
+		</li>
+		<li>
+			<b>
+				№ Полёта: {{object.flight_number}}
+			</b>
+		</li>
+		<li>
+			<b>
+				Класс: {{object.plane_info.comfort_type}}
+			</b>
+		</li>
+		<li>
+			<b>
+				Сумма: {{object.plane_info.price}}
+			</b>
+		</li>
+
+	</p>
+{% endblock %}

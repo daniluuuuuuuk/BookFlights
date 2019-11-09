@@ -2,7 +2,7 @@ from django.db import models as m
 
 
 class City(m.Model):
-    name = m.TextField(unique=True)
+    name = m.CharField(max_length=20, unique=True)
     lat = m.FloatField()
     lon = m.FloatField()
 
@@ -14,4 +14,4 @@ class City(m.Model):
         return f"City #{self.pk}: '{self.name}'"
 
     def __str__(self):
-        return f"{self.name} ({self.pk})"
+        return f"{self.name}"
