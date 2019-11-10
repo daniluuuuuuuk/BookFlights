@@ -1,6 +1,6 @@
 from django.views.generic import ListView
 from apps.booking.forms import SearchForm
-from apps.booking.models import Book
+from apps.booking.models import Plane
 
 
 # def booking(request):
@@ -14,7 +14,7 @@ from apps.booking.models import Book
 class BookingView(ListView):
     http_method_names = ("get", "post")
     template_name = "booking/index.html"
-    model = Book
+    model = Plane
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -36,7 +36,5 @@ class BookingView(ListView):
                     qs = qs.filter(arr_station=f.cleaned_data["arr_station"])
                 if f.cleaned_data["comfort_type"]:
                     qs = qs.filter(comfort_type=f.cleaned_data["comfort_type"])
-                if f.cleaned_data["name"]:
-                    qs = qs.filter(comfort_type=f.cleaned_data["name"])
 
         return qs

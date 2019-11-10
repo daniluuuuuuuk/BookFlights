@@ -16,16 +16,19 @@
 
 <div>
 
-  {% for book in object_list %}
+  {% for plane in object_list %}
 
-  <div style="background: #4682B4">
-    <div><span>{{book.city.dep_station} - {book.city.arr_station}</span></div>
+  <div style="background: #4682B4; width: 200px">
+    <div><span>{{plane.dep_station}} - {{plane.arr_station}}({{plane.plane_num}})</span></div>
     <div>
       <ul>
-        <li class="li--{{book.plane.dep_time}}">{{book.plane.dep_time}}</li>
+        <li class="li--{{plane.dep_time}}">{{plane.dep_time}}</li>
+        <li class="li--{{plane.arr_time}}">{{plane.arr_time}}</li>
+        <li class="li--{{plane.comfort_type}}">{{plane.comfort_type}}</li>
       </ul>
     </div>
   </div>
+
   {% endfor %}
 
 </div>
