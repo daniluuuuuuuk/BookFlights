@@ -18,9 +18,10 @@ from django.urls import path, include
 from apps.info.views import TicketView
 
 urlpatterns = [
-    path("", include("apps.main.urls")),
+    path("", include("apps.main.urls"), name='main'),
     path("admin/", admin.site.urls),
+    path("accounts/", include("django.contrib.auth.urls")),
     path("booking/", include("apps.booking.urls")),
     path("", include("apps.info.urls")),
-    # path("<slug:slug>/", ticket_detail, name='ticket-detail'),
+    path("user/", include("apps.user.urls")),
 ]

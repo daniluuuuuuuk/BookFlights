@@ -1,12 +1,11 @@
 from django import forms as f
-from django.utils.translation import ugettext as _
 from apps.booking.models import Plane, City, Comfort
 
 
 class SearchForm(f.ModelForm):
-    dep_station = f.ModelChoiceField(queryset=City.objects.all())
-    arr_station = f.ModelChoiceField(queryset=City.objects.all())
-    comfort_type = f.ModelChoiceField(queryset=Comfort.objects.all(), required=False)
+    dep_station = f.ModelChoiceField(queryset=City.objects.all(), label="Откуда")
+    arr_station = f.ModelChoiceField(queryset=City.objects.all(), label="Куда")
+    comfort_type = f.ModelChoiceField(queryset=Comfort.objects.all(), required=False, label="Класс")
 
     class Meta:
         model = Plane

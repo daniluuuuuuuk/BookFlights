@@ -9,7 +9,7 @@ ipython = "*"
 
 [packages]
 dj-database-url = "*"
-django = "*"
+django = {extras = ["bcrypt"],version = "*"}
 dynaconf = {extras = ["yaml"],version = "*"}
 gunicorn = "*"
 whitenoise = "*"

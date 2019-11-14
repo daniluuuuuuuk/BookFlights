@@ -25,6 +25,13 @@
 				<ul class="menu">
 					<li class="selected"><a href="/">Главная</a></li>
 					<li><a href="/booking/">Бронирование</a></li>
+					{% if user.is_authenticated %}
+					<li>{{ form.username}}</li>
+					<li><a href="{% url 'logout' %}">Выйти</a></li>
+					{% else %}
+					<li><a href="{% url 'login' %}">Войти</a></li>
+					<li><a href="{% url 'signup' %}">Зарегистрироваться</a></li>
+      				{% endif %}
 				</ul>
 
 			</div>

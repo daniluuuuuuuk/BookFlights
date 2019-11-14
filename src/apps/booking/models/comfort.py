@@ -19,7 +19,7 @@ class Comfort(m.Model):
         ordering = ["pk"]
 
     def __repr__(self):
-        return f"{self.comfort_type}({self.name})"
+        return f"{self.comfort_type}"
 
     def __str__(self):
         return f"{self.comfort_type}"

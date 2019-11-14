@@ -108,3 +108,5 @@ venv.bak/
 
 # secrets
 **/.secrets.*
+
+src/static/

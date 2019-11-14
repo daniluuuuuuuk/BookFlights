@@ -19,7 +19,7 @@
   {% for plane in object_list %}
 
   <div style="background: #4682B4; width: 200px">
-    <div><span>{{plane.dep_station}} - {{plane.arr_station}}({{plane.plane_num}})</span></div>
+    <div><span>{{plane.dep_station}} - {{plane.arr_station}}({{plane_num}})</span></div>
     <div>
       <ul>
         <li class="li--{{plane.dep_time}}">{{plane.dep_time}}</li>
@@ -27,6 +27,10 @@
         <li class="li--{{plane.comfort_type}}">{{plane.comfort_type}}</li>
       </ul>
     </div>
+    {% if user.is_authenticated %}
+    <a href="/booking/1"><button type="submit">Забронировать</button></a>
+    {% endif %}
+
   </div>
 
   {% endfor %}

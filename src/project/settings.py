@@ -12,12 +12,13 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 from pathlib import Path
-
+from django.urls import reverse_lazy
 import dj_database_url
 from dynaconf import settings as _settings
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).parent.parent.resolve()
+PROJECT_DIR = BASE_DIR / "project"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     "apps.main",
     "apps.booking",
     "apps.info",
+    "apps.user",
 ]
 
 MIDDLEWARE = [
@@ -121,3 +123,15 @@ STATIC_DIR.mkdir(exist_ok=True)
 STATIC_ROOT = STATIC_DIR.as_posix()
 
 STATIC_URL = "/static/"
+
+STATICFILES_DIRS = [PROJECT_DIR / "static"]
+
+LOGIN_URL = reverse_lazy("login")
+LOGIN_REDIRECT_URL = reverse_lazy("main")
+LOGOUT_URL = reverse_lazy("main")
+
+
+PASSWORD_HASHERS = [
+    "django.contrib.auth.hashers.BCryptSHA256PasswordHasher",
+]
+
