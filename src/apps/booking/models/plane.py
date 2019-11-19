@@ -5,6 +5,7 @@ from django.db import models as m
 from apps.booking.models import City
 
 from django.urls import reverse
+from django.conf import settings
 
 
 class Plane(m.Model):
@@ -18,6 +19,7 @@ class Plane(m.Model):
         (BUSINESS, "Бизнес"),
         (FIRST_CLASS, "Первый класс"),
     ]
+    user = m.ForeignKey(settings.AUTH_USER_MODEL, on_delete=m.CASCADE, related_name="user_info", default="3")
     plane_num = m.CharField(max_length=5, default='', unique=True)
     plane_model = m.CharField(max_length=20, default='AirBus A319')
     dep_station = m.ForeignKey("City", on_delete=m.CASCADE, related_name='departure_plane')

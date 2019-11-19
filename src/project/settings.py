@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     # our apps
     "apps.main",
     "apps.booking",
-    "apps.info",
     "apps.user",
 ]
 

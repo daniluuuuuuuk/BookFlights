@@ -8,42 +8,42 @@
 		<h2>Ваш билет:</h2>
 		<li>
 			<b>
-				ФИО пассажира: {{object.passenger_info.surname}} {{object.passenger_info.name}} {{object.passenger_info.patronymic}}
+				ФИО пассажира: {{ user.get_full_name }}
 			</b>
 		</li>
 		<li>
 			<b>
-				От: {{object.plane_info.dep_station}}
+				От: {{plane.dep_station}}
 			</b>
 		</li>
 		<li>
 			<b>
-				До: {{object.plane_info.arr_station}}
+				До: {{plane.arr_station}}
 			</b>
 		</li>
 		<li>
 			<b>
-				Отправление: {{object.plane_info.dep_time}}
+				Отправление: {{plane.dep_time}}
 			</b>
 		</li>
 		<li>
 			<b>
-				Прибытие: {{object.plane_info.arr_time}}
+				Прибытие: {{plane.arr_time}}
 			</b>
 		</li>
 		<li>
 			<b>
-				№ Полёта: {{object.flight_number}}
+				№ Полёта: {{plane.plane_num}}
 			</b>
 		</li>
 		<li>
 			<b>
-				Класс: {{object.plane_info.comfort_type}}
+				Класс: {{plane.comfort_type}}
 			</b>
 		</li>
 		<li>
 			<b>
-				Сумма: {{object.plane_info.price}}
+				Сумма: {{plane.price}}
 			</b>
 		</li>
 

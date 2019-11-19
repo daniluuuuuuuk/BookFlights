@@ -24,3 +24,6 @@ class SignUpForm(UserCreationForm):
             'password1',
             'password2',
         )
+
+    def get_full_name(self):
+        return self.last_name + ' ' + self.first_name + ' ' + self.patronymic

@@ -1,5 +1,6 @@
 from collections import defaultdict
 from django.views.generic import ListView
+from django.views.generic import DetailView
 from apps.booking.forms import SearchForm
 from apps.booking.models import Plane
 from django import forms
@@ -36,23 +37,7 @@ class BookingView(ListView):
 
         return qs
 
-# form = SearchForm(self.request.GET)
-        # if not form.is_valid():
-        #     return []
-        #
-        # booking = super().get_queryset()
-        #
-        # if form.cleaned_data["dep_station"]:
-        #     booking = booking.filter(dep_station=form.cleaned_data["dep_station"])
-        #
-        # if form.cleaned_data["arr_station"]:
-        #     booking = booking.filter(arr_station=form.cleaned_data["arr_station"])
-        #
-        # if form.cleaned_data["comfort_type"]:
-        #     booking = booking.filter(comfort_type=form.cleaned_data["comfort_type"])
-        #
-        # grouped = defaultdict(list)
-        # for b in booking:
-        #     grouped[b.dep_station].append(b)
-        #
-        # return grouped.items()
+
+class TicketView(DetailView):
+    template_name = "booking/ticket.html"
+    model = Plane
