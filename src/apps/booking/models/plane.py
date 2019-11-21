@@ -1,9 +1,6 @@
 from math import sqrt
-
 from django.db import models as m
-
 from apps.booking.models import City
-
 from django.urls import reverse
 from django.conf import settings
 
@@ -49,7 +46,7 @@ class Plane(m.Model):
             'ЭК': 0.2,
             'КМФ': 0.4,
             'БИЗ':  0.825,
-            'ПКЛ': 2,
+            'ПКЛ': 5.8,
         }
         p = round(self.distance() * real_price[self.comfort_type])
         return p
