@@ -26,7 +26,7 @@
 					<li class="selected"><a href="/">Главная</a></li>
 					<li><a href="/booking/">Бронирование</a></li>
 					{% if user.is_authenticated %}
-					<li>{{ user.username}}</li>
+					<li>{{ user.username}}({{user.email}})</li>
 					<li><a href="{% url 'logout' %}">Выйти</a></li>
 					<li><a href="{% url 'change_password' %}">Изменить пароль</a></li>
 					{% else %}
