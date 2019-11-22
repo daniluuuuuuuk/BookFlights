@@ -38,6 +38,11 @@ class BookingView(ListView):
         return qs
 
 
+def get_pk(**kwargs):
+
+    return context
+
+
 class TicketView(DetailView):
     template_name = "booking/ticket.html"
     model = Plane

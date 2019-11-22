@@ -49,7 +49,7 @@ class Plane(m.Model):
             'ПКЛ': 5.8,
         }
         p = round(self.distance() * real_price[self.comfort_type])
-        return p
+        return f"{p} BYN"
 
     def get_absolute_url(self):
         return f"{reverse('plane-detail', args=[str(self.pk)])}"
