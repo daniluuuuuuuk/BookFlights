@@ -8,7 +8,7 @@
 		<h2>Ваш билет:</h2>
 		<li>
 			<b>
-				ФИО пассажира: {{ user.get_full_name }}
+				ФИО пассажира: {{ request.user.get_full_name }}
 			</b>
 		</li>
 		<li>

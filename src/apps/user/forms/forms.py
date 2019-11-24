@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from apps.user.models import Account, MyAccountManager
 
 
 class SignUpForm(UserCreationForm):
@@ -12,7 +13,7 @@ class SignUpForm(UserCreationForm):
     passport_number = forms.CharField(max_length=7, required=True, label='Номер паспорта')
 
     class Meta:
-        model = User
+        model = Account
         fields = (
             'username',
             'first_name',
@@ -24,6 +25,3 @@ class SignUpForm(UserCreationForm):
             'password1',
             'password2',
         )
-
-    def get_full_name(self):
-        return self.last_name + ' ' + self.first_name + ' ' + self.patronymic

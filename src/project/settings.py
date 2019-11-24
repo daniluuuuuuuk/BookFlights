@@ -46,6 +46,13 @@ INSTALLED_APPS = [
     "apps.user",
 ]
 
+AUTH_USER_MODEL = 'user.Account'
+# AUTHENTICATION_BACKENDS = (
+#     'django.contrib.auth.backends.ModelBackend',
+# )
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',]
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
