@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}{% endblock %}
+{% block page_name %}Мои билеты{% endblock %}
+
+{% block content %}
+	{% for plane in object_list %}
+
+  <div style="background: #4682B4; width: 200px">
+    <div><span>{{plane.dep_station}} - {{plane.arr_station}}({{plane_num}})</span></div>
+    <div>
+      <ul>
+        <li class="li--{{plane.dep_time}}">{{plane.dep_time}}</li>
+        <li class="li--{{plane.arr_time}}">{{plane.arr_time}}</li>
+        <li class="li--{{plane.comfort_type}}">{{plane.comfort_type}}</li>
+      </ul>
+    </div>
+    <a href="{% url 'plane-detail' pk=plane.pk %}"><button type="submit">Забронировать</button></a>
+  </div>
+	 {% endfor %}
+{% endblock %}

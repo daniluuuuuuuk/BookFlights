@@ -2,8 +2,12 @@ from collections import defaultdict
 from django.views.generic import ListView
 from django.views.generic import DetailView
 from apps.booking.forms import SearchForm
-from apps.booking.models import Plane
+from apps.booking.models import Plane, Flight
 from django import forms
+from django.views.generic import CreateView
+from utils.aname import a
+from django.urls import reverse
+import django_filters
 
 
 class BookingView(ListView):
@@ -46,3 +50,40 @@ def get_pk(**kwargs):
 class TicketView(DetailView):
     template_name = "booking/ticket.html"
     model = Plane
+
+
+class TripAddForm(forms.ModelForm):
+    class Meta:
+        model = Flight
+        # fields = [a(_f) for _f in (Flight.user, Flight.booked_plane)]
+        fields = ('booked_plane',)
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(TicketAddView, self).form_valid(form)
+
+
+class TripAddView(CreateView):
+    model = Flight
+
+    form_class = TripAddForm
+    template_name_suffix = "_add_form"
+
+    # def get_object_list(self):
+    #     return super().get_object_list().filter(self.Flight.booked_plane == self.request.booked_plane)
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        #form.instance.booked_plane = self.request.booked_plane
+        return super(TripAddView, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse("flight", args=[str(self.object.pk)])
+
+
+class FlightView(ListView):
+    model = Flight
+    template_name = "booking/user_flights.html"
+
+    def get_object_list(self):
+        return super().get_object_list().filter(self.request.user)

@@ -33,7 +33,7 @@ class Plane(m.Model):
         return f"Plane №{self.pk}: from {self.dep_station} to {self.arr_station}"
 
     def __str__(self):
-        return f"{self.dep_station} - {self.arr_station}"
+        return f"{self.dep_station} - {self.arr_station}({self.dep_time}-{self.arr_time}({self.comfort_type}))"
 
     def distance(self):
         degrees = sqrt(
