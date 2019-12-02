@@ -7,7 +7,6 @@ from django import forms
 from django.views.generic import CreateView
 from utils.aname import a
 from django.urls import reverse
-import django_filters
 
 
 class BookingView(ListView):
