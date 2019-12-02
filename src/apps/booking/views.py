@@ -69,16 +69,12 @@ class TripAddView(CreateView):
     form_class = TripAddForm
     template_name_suffix = "_add_form"
 
-    # def get_object_list(self):
-    #     return super().get_object_list().filter(self.Flight.booked_plane == self.request.booked_plane)
-
     def form_valid(self, form):
         form.instance.user = self.request.user
-        #form.instance.booked_plane = self.request.booked_plane
         return super(TripAddView, self).form_valid(form)
 
     def get_success_url(self):
-        return reverse("flight", args=[str(self.object.pk)])
+        return reverse("flights", args=[str(self.object.pk)])
 
 
 class FlightView(ListView):
@@ -86,4 +82,4 @@ class FlightView(ListView):
     template_name = "booking/user_flights.html"
 
     def get_object_list(self):
-        return super().get_object_list().filter(self.request.user)
+        return super().get_object_list().filter(user=self.request.user)

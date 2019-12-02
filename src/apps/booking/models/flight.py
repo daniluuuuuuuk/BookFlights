@@ -15,7 +15,7 @@ class Flight(StrReprMixin, m.Model):
         ordering = ["user"]
 
     def __repr__(self) -> Text:
-        return f'Flight {self.pk}: "{self.user_id}-{self.booked_plane}"'
+        return f'{self.booked_plane}'
 
     def get_absolute_url(self) -> Text:
         return f"{reverse('flight_add', args=[str(self.pk)])}"
