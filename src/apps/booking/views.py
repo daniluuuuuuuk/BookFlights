@@ -80,5 +80,5 @@ class FlightView(ListView):
     model = Flight
     template_name = "booking/user_flights.html"
 
-    def get_object_list(self):
-        return super().get_object_list().filter(user=self.request.user)
+    def get_queryset(self):
+        return super().get_queryset().filter(user=self.request.user)
