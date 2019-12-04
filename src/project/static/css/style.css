@@ -52,7 +52,7 @@ ul.menu li a {
 	font-size: 0.8em;
 	margin-left: 0px;
 	margin-right: 0px;
-	min-width: 900px;
+
 }
 
 .main, .logo, .site_content, .footer {
@@ -71,21 +71,17 @@ ul.menu li a {
 }
 
 .logo_text h1, .logo_text h1 a, .logo_text h1 a:hover {
-padding: 22px 0 0 0;
+padding: 25px;
+font-size: 55px;
 color: #fff;
 letter-spacing: 0.1em;
 text-decoration: none;
 }
 
 .logo_text h2 {
-	font-size: 0.9em;
-	padding: 4px 0 0 0;
+	font-size: 20px;
+	padding: 10px;
 	color: #E0FFFF;
-}
-
-.menubar {
-	width: 900px;
-	height: 46px;
 }
 
 .book_form {
@@ -153,18 +149,9 @@ text-decoration: none;
     box-sizing: border-box;
 }
 
-
 .pumpum {
 	text-align: justify;
 	padding: 0 40px;
-}
-
-.logo_text h1 a{
-	font-size: 50px;
-}
-
-.logo_text h2 {
-	font-size: 12px;
 }
 
 .tutu {
@@ -203,8 +190,7 @@ text-decoration: none;
 	text-decoration: none;
 }
 
-.html,
-.body {
+.html, .body {
   height: 100%;
 }
 #wrap {

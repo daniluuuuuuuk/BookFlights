@@ -19,9 +19,9 @@
 }
 .dropdown {
 	margin-top: 0px;
-	margin-left: 1600px;
+	margin-left: 1500px;
     position: static;
-    width: 400px;
+    width: 300px;
     height: 0px;
 
 }
@@ -44,7 +44,7 @@
 
 <body>
 
-	<div class="main">
+
 		<div class="header">
 			<div class="dropdown">
 				{% if user.is_authenticated %}
@@ -64,14 +64,14 @@
 			</div>
 			<div class="logo">
 
-				<div class="logo_text">
+				<div class="logo_text" >
 					<h1><a href="/">BookFlights</a></h1>
 					<h2>Мы упростим Вашу жизнь!</h2>
 				</div>
 
 			</div>
 
-			<div class="menubar">
+			<div class="menubar"  style="width: 1100px">
 
 				<ul class="menu">
 					<li class="selected"><a href="/">Главная</a></li>
@@ -81,13 +81,16 @@
 
 		</div>
 
-			</div>
 
+			</div>
+<div class="main" style="width: 1000px; margin: 0 auto; padding: 40px 0">
 
     {% block content %}
     {% endblock %}
 
-
+		<br>
+		<br>
+		<br>
 	</div>
 	<div class="footer">
 		<p>
